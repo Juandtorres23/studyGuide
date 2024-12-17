@@ -20,6 +20,7 @@ h3 {
     font-family: 'Lora', serif;
     font-weight: 400;
     color: #143174;
+    margin-top: 0;
 }
 
 h1 {
@@ -75,6 +76,16 @@ strong {
     margin: 2em 0;
 }
 
+.widget-title,
+.widget-recent-post-title {
+    font-size: 1rem;
+}
+
+.widget-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
 
 
 
@@ -100,6 +111,7 @@ header {
     background: #f8f8f8;
     padding: 2em 0;
     text-align: center;
+    margin-bottom: 3em;
 }
 
 /*
@@ -120,11 +132,13 @@ you can put all the media queries in one spot usually after all your stiles grou
     }
 
     main {
-        width: 75%;
+        width: 70%;
     }
 
     aside {
-       width: 20%; 
+       width: 25%;
+       min-width: 200px; 
+       margin-left: 1em;
     }
 }
 /* navigation */
@@ -175,5 +189,83 @@ nav a:focus {
 
 .article-featured {
     border-bottom: #707070 1px solid;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.article-recent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+
+/*  html's order makes more sence if there was no css for readability, we style it so that visualy it looks better*/
+
+.article-recent-main {
+    order: 2;
+}
+
+.article-recent-secondary {
+    order: 1;
+}
+
+/* This code is not practical for responsiveness but it is a cool way to stile things in the same row.... it may create overlap if you are not carefull! */
+/* @media (min-width: 550px) {
+    .article-recent-main {
+        margin-top: -2.5em;
+    }
+
+    .article-info {
+        text-align: right;
+    }
+} */
+
+@media (min-width: 675px) {
+    .article-recent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .article-recent-main {
+        width: 68%;
+    }
+
+    .article-recent-secondary {
+        width: 30%;
+    }
+    
+    /* changing the visual order with flexbox */
+    
+    .article-featured {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .article-image {
+        order: -2;
+        width: 100%;
+        min-height: 250px; 
+        object-fit: cover;
+        /* object-position: left; */
+    }
+    
+    .article-image-deco {
+        object-position: left;
+        
+    }
+
+    .article-info {
+        order: -1;
+    }
+}
+
+/*  widgets */
+
+.sidebar-widget {
+    border: 20px solid #efefef;
+    margin-bottom: 2em;
     padding: 1em;
+
 }
