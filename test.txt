@@ -1,6 +1,0 @@
-testing pushing to github
-
-adding another line of text to this file to keep practicing
-
-
-yet agian another line of text to continue the practise 
