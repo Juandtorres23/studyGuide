@@ -12,8 +12,45 @@ const companies= [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
+
+// for(let i = 0; i < companies.length; i++) {
+//     console.log(companies[i])
+// }
 // forEach
+
+// companies.forEach(function(company) {
+//    console.log(company); 
+// });
+
 // filter
+
+// Get 21 and older
+// let canDrink = [];
+// for(let i = 0; i < ages.length; i++) {
+//     if(ages[i] >= 21) {
+//         canDrink.push(ages[i]);
+//     }
+// }
+
+// const canDrink = ages.filter(function(age) {
+//     if(age >= 21) {
+//         return true;
+//     }
+// });
+
+const canDrink = ages.filter(age => age >= 21);
+
+// console.log(canDrink)
+
+// Filter retail companies
+
+const retailCompanies = companies.filter(function(company) {
+    if(company.category === 'Retail') {
+        return true;
+    }
+});
+
+console.log(retailCompanies);
 // map
 // sort
 // reduce
