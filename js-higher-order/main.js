@@ -151,3 +151,12 @@ const combined = ages
 
 console.log(combined)
 
+// this keyword
+// the object that is executing the current function
+
+// if the function is part of an object its a method so if method in an object it refrences itself     method -> obj
+
+// a regular function it refrences the global object function -> global (window, global)
+
+
+
