@@ -66,6 +66,64 @@ Magazine.prototype.constructor = Magazine;
 // Object Of Protos
 const bookProtos = {
     getSummary: function() {
-        
+     return `${this.title} was written by ${this.author} in ${this.year}`; 
+    },
+    getAge: function() {
+        const years = new Data().getFullYear() - this.year;
+        return `${this.title} is ${years} years old`
+    },
+};
+
+// create object 
+// const book1 = Object.create(bookProtos);
+// book1.title = 'Book One';
+// book1.author = 'John Doe';
+// book1.year = '2013'
+
+const book11 = Object.create(bookProtos, {
+    title: {value: 'Book One'},
+    author: {value: 'John Doe'},
+    year: {value: '2013'},
+});
+
+class Book {
+    constructor(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+    getSummary() {
+        return `${this.title} was written by ${this.author} in ${this.year}`;
+    }
+
+    getAge() {
+        const years = new Data().getFullYear() - this.year;
+        return `${this.title} is ${years} years old` 
+    }
+
+    revice(newYear) {
+       this.year = newYear;
+       this.revised = true; 
+    }
+
+    static topBookstore() {
+        return 'Barnes and Noble'
     }
 }
+
+
+//  Instantiate Object 
+const book111 = new Book('Book One', 'John Doe', '2013');
+
+// Magazine subclasses
+class Magazine extends Book {
+    constructor(title, author, year, month) {
+        super(title, author, year);
+        this.month = month;
+    }
+}
+
+// Instantiate Magazine
+const mag11 = new Magazine('Mag One', 'John Doe', '2018', 'Jan');
+
