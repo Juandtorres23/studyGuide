@@ -127,3 +127,4 @@ class Magazine extends Book {
 // Instantiate Magazine
 const mag11 = new Magazine('Mag One', 'John Doe', '2018', 'Jan');
 
+

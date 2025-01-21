@@ -57,3 +57,5 @@ we are switching the main axis and still able to get all the benefits from flex
 
 - justify-content will now work vertically 
 -align-items will now work horizontally
+
+
